@@ -1,0 +1,48 @@
+*.idea
+*.iml
+*/*.iml
+local.properties
+build/*
+app/app.iml
+# Git merge file
+#####################
+*.orig
+
+server/.idea/
+
+# PIL generated file
+#####################
+*.pkl
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Tags #
+########
+tags
+
+# Backup file #
+###############
+*.bak
+
+# Vim Temp files #
+##################
+.*.sw*
+.sw*
+*.un~
+
+.sass-cache
+.git
+
+# android 
+###########################
+android.iml
+
+Status API Training Shop Blog About Pricing
+© 2015 GitHub, Inc. Terms Privacy Security Contact Help
+
