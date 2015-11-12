@@ -14,7 +14,9 @@ This lib is inspired by [Medium](https://medium.com/@wing_jay/thinking-about-the
 ###Related resource
 Thanks for the algorithms: `Stack Blur`: http://www.quasimondo.com/StackBlurForCanvas/StackBlurDemo.html
 
-###Follow me
+###Reach me
 You can get information about me and reach me in my github page: https://github.com/wingjay
+Feel free to give me advices by <mailto:yinjiesh@126.com>
 
 ######Thanks!
+
