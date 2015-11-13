@@ -13,10 +13,20 @@ BlurImageView For Android, you can load your image progressively like [Medium](h
 This lib is inspired by [Medium](https://medium.com/@wing_jay/thinking-about-the-way-of-loading-picture-by-medium-4adfe792b437) and users love this way of loading pics, Because a beautiful Blurry pic is always better than a blank area or an ugly thumbnail.
 
 ###How to use it?
-1. You can fork and run this code directly.
-2. `blurImageView.setBlurImageByUrl(blurImageUrl);` it will **load and blur** a image.
-3. `fullBlurImageView.setFullImageByUrl(blurImageUrl, normalImageUrl);` it will **load two images progressively**.
-
+```java
+    BlurImageView blurImageView = (BlurImageView) findViewById(R.id.XXX);
+    blurImageView.setBlurImageByUrl(blurImageUrl);
+```
+   This will **load and blur** a image.
+```
+  BlurImageView fullBlurImageView = (BlurImageView) findViewById(R.id.XXX)
+  fullBlurImageView.setFullImageByUrl(blurImageUrl, normalImageUrl);
+```
+  This will **load two images progressively**.
+```
+  blurImageView.setBlurFactor(blurFactor);
+```
+  This can set the factor of blurry, default 8 - 10.
 
 ###Related resource
 Thanks for the algorithms: `Stack Blur`: http://www.quasimondo.com/StackBlurForCanvas/StackBlurDemo.html
