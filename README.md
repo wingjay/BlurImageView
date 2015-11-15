@@ -15,8 +15,16 @@ BlurImageView For Android, you can load your image progressively like [Medium](h
 ###Why I do this?
 This lib is inspired by [Medium](https://medium.com/@wing_jay/thinking-about-the-way-of-loading-picture-by-medium-4adfe792b437) and users love this way of loading pics, Because a beautiful Blurry pic is always better than a blank area or an ugly thumbnail.
 
-###How to get it?
+###How to get it? 
+**Three Ways to choose.**
 ####1. For Gradle
+Simply add the dependency
+```
+dependencies {
+	compile 'com.wingjay:blurimageviewlib:1.0.+'
+}
+```
+####2. For Gradle and JitPack Maven
 
 **Step 1. Add it in your build.gradle**
 ```
@@ -28,11 +36,11 @@ This lib is inspired by [Medium](https://medium.com/@wing_jay/thinking-about-the
 ```
 **Step 2. Add the dependency in the form**
 ```
-	dependencies {
-	        compile 'com.github.wingjay:blurimageview:v1.0'
-	}
+dependencies {
+        compile 'com.github.wingjay:blurimageview:v1.0'
+}
 ```
-####2. For Maven
+####3. For Maven
 
 **Step 1. Add the JitPack repository to your build file**
 ```
