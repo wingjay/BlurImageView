@@ -1,4 +1,7 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-BlurImageView-green.svg?style=true)](https://android-arsenal.com/details/1/2768)
+
+[![Release JitPack](https://img.shields.io/github/release/wingjay/blurimageview.svg?label=JitPack)](https://jitpack.io/#wingjay/blurimageview/v1.0)
+
 # BlurImageView
 BlurImageView For Android, you can load your image progressively like [Medium](https://medium.com/@wing_jay/thinking-about-the-way-of-loading-picture-by-medium-4adfe792b437).
 
@@ -18,6 +21,7 @@ This lib is inspired by [Medium](https://medium.com/@wing_jay/thinking-about-the
 **Step 1. Add it in your build.gradle**
 ```
  repositories {
+ 	jcenter()
         // ...
         maven { url "https://jitpack.io" }
  }
