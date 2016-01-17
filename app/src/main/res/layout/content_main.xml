@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.wingjay.blurimageview.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    android:orientation="vertical"
+    >
 
     <ScrollView
         android:orientation="vertical"
@@ -18,14 +20,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             >
-
-            <EditText
-                android:id="@+id/blur_factor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter your blur factor"
-                android:inputType="number"
-                />
 
             <Button
                 android:id="@+id/fast_blur_btn"
@@ -43,45 +37,45 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textColor="#000000"
-                    android:text="Here is a blur imageView \n which can load a image and blur it"
-                    />
-
-                <com.wingjay.blurimageviewlib.BlurImageView
-                    android:id="@+id/blur_image_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="190dp"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textColor="#000000"
-                    android:text="Here is a Full blur imageView \n which will load two images, small one and normal one
-                the small one will be blurry and once the normal one is loaded, replace the small one automatically."
-                    />
+                    android:text="@string/blurimageview_info"/>
 
                 <com.wingjay.blurimageviewlib.BlurImageView
                     android:id="@+id/full_blur_image_view"
                     android:layout_width="match_parent"
-                    android:layout_height="190dp"
+                    android:layout_height="250dp"
                     />
 
+                <TextView
+                    android:id="@+id/image_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:text="@string/blurimageview_info_ch"/>
+
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/about_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#444444"
+                android:padding="10dp"
+                android:textStyle="italic|bold"
+                />
 
         </LinearLayout>
 
     </ScrollView>
 
-</RelativeLayout>
+</LinearLayout>
