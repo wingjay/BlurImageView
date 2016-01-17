@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">BlurImageView</string>
     <string name="action_settings">Settings</string>
+
+    <string name="blurimageview_info">Here is a Full blur imageView which will load two images, small one and normal one the small one will be blurry and once the normal one is loaded,replace the small one automatically.\nIn addition, it will cache image by itself.
+    </string>
+
+    <string name="blurimageview_info_ch">上面是一个完整的BlurImageView,为了展示虚化加载效果,它会首先去获取小图并虚化显示给用户;同时去获取大图,一旦大图加载完毕,便进行显示.\n另外,BlurImageView会自动缓存图片.
+    </string>
 </resources>
