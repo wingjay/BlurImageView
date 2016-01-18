@@ -12,6 +12,9 @@ BlurImageView For Android, you can load your image progressively like [Medium](h
 
 ![](https://github.com/wingjay/BlurImageView/blob/master/ReadMe/blurImageView_nm.gif)
 
+###Playable apk
+You can [Download sample apk](https://github.com/wingjay/blurimageview/blob/master/sample.apk) and play on your phone. Try it!
+
 ###Why I do this?
 This lib is inspired by [Medium](https://medium.com/@wing_jay/thinking-about-the-way-of-loading-picture-by-medium-4adfe792b437) and users love this way of loading pics, Because a beautiful Blurry pic is always better than a blank area or an ugly thumbnail.
 
