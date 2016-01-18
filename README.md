@@ -80,7 +80,9 @@ dependencies {
 ###Related resource
 Thanks for the algorithms: `Stack Blur`: http://www.quasimondo.com/StackBlurForCanvas/StackBlurDemo.html
 
-###Reach me
+###Reach me - wingjay
+![](http://tp3.sinaimg.cn/1625892654/180/5739331233/1)
+
 Weibo: http://weibo.com/u/1625892654
 
 You can get information about me and reach me in my github page: https://github.com/wingjay
