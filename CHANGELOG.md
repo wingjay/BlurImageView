@@ -1,4 +1,4 @@
-## v0.2
+## v1.1
 1. Show loading progressBar upon the blurry image
 2. Improve sample code for other developers
 
