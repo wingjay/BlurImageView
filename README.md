@@ -19,47 +19,12 @@ You can [Download sample apk](https://github.com/wingjay/blurimageview/blob/mast
 This lib is inspired by [Medium](https://medium.com/@wing_jay/thinking-about-the-way-of-loading-picture-by-medium-4adfe792b437) and users love this way of loading pics, Because a beautiful Blurry pic is always better than a blank area or an ugly thumbnail.
 
 ###How to get it? 
-**Three Ways to choose.**
-####1. For Gradle
 Simply add the dependency
 ```
 dependencies {
-	compile 'com.wingjay:blurimageviewlib:1.0.+'
+	compile 'com.wingjay:blurimageviewlib:1.1.0'
 }
 ```
-####2. For Gradle and JitPack Maven
-
-**Step 1. Add it in your build.gradle**
-```
- repositories {
- 	jcenter()
-        // ...
-        maven { url "https://jitpack.io" }
- }
-```
-**Step 2. Add the dependency in the form**
-```
-dependencies {
-        compile 'com.github.wingjay:blurimageview:v1.0'
-}
-```
-####3. For Maven
-
-**Step 1. Add the JitPack repository to your build file**
-```
-<repository>
-	    <id>jitpack.io</id>
-	    <url>https://jitpack.io</url>
-	</repository>
-```
-**Step 2. Add the dependency in the form**
-```
-<dependency>
-	    <groupId>com.github.wingjay</groupId>
-	    <artifactId>blurimageview</artifactId>
-	    <version>v1.0</version>
-	</dependency>
-```	
 
 ###How to use it?
 ```java
