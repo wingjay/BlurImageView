@@ -10,7 +10,7 @@ BlurImageView For Android, you can load your image progressively like [Medium](h
 2. At the same time, it starts to load the real image;
 3. once loaded, replace the blurry one automatically.
 
-![](https://github.com/wingjay/BlurImageView/blob/master/ReadMe/blurImageView_nm.gif)
+<img src="https://github.com/wingjay/BlurImageView/blob/master/ReadMe/blurImageView_nm.gif" width="300">
 
 ###Playable apk
 You can [Download sample apk](https://github.com/wingjay/blurimageview/blob/master/sample.apk) and play on your phone. Try it!
