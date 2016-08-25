@@ -3,6 +3,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 // Remember update version when library updates
 //./gradlew install; ./gradlew bintrayUpload
+// https://bintray.com/wingjay/maven/BlurImageView
 version = "2.0.1"
 
 android {

@@ -22,7 +22,7 @@ This lib is inspired by [Medium](https://medium.com/@wing_jay/thinking-about-the
 Simply add the dependency
 ```
 dependencies {
-	compile 'com.wingjay:blurimageviewlib:1.1.0'
+	compile 'com.wingjay:blurimageviewlib:2.0.1'
 }
 ```
 
