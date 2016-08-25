@@ -3,9 +3,15 @@ package com.wingjay.blurimageviewlib;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -13,7 +19,9 @@ import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingProgressListener;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 
@@ -30,7 +38,32 @@ public class BlurImageView extends RelativeLayout {
   private int mBlurFactor = DEFAULT_BLUR_FACTOR;
 
   private String mBlurImageUrl, mOriginImageUrl;
+  private int greyColor = Color.parseColor("#66CCCCCC");
+  private Drawable defaultDrawable = new ColorDrawable(greyColor);
+  private Drawable failDrawable = new Drawable() {
+    Paint textPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    @Override
+    public void draw(Canvas canvas) {
+      canvas.drawColor(greyColor);
+      String failString = "load failure";
+      canvas.translate((canvas.getWidth() - textPaint.measureText(failString)) / 2,
+          canvas.getHeight()/2);
+      textPaint.setColor(Color.DKGRAY);
+      textPaint.setTextSize(30);
+      canvas.drawText(failString, 0, failString.length(), textPaint);
+    }
 
+    @Override
+    public void setAlpha(int alpha) {}
+
+    @Override
+    public void setColorFilter(ColorFilter colorFilter) {}
+
+    @Override
+    public int getOpacity() {
+      return 0;
+    }
+  };
   private ImageLoader imageLoader;
   private DisplayImageOptions displayImageOptions;
 
@@ -77,7 +110,8 @@ public class BlurImageView extends RelativeLayout {
   private void initDisplayImageOptions() {
     displayImageOptions = new DisplayImageOptions.Builder()
         .cacheOnDisk(true)
-        .considerExifParams(true).bitmapConfig(Bitmap.Config.RGB_565)
+        .considerExifParams(true)
+        .bitmapConfig(Bitmap.Config.RGB_565)
         .build();
   }
 
@@ -86,10 +120,11 @@ public class BlurImageView extends RelativeLayout {
     imageView.setLayoutParams(
         new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
     imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+    imageView.setImageDrawable(defaultDrawable);
 
     loadingCircleProgressView = new LoadingCircleProgressView(mContext);
     LayoutParams progressBarLayoutParams =
-        new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        new LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
     progressBarLayoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
     loadingCircleProgressView.setLayoutParams(progressBarLayoutParams);
     loadingCircleProgressView.setVisibility(GONE);
@@ -100,6 +135,11 @@ public class BlurImageView extends RelativeLayout {
 
   private SimpleImageLoadingListener blurLoadingListener = new SimpleImageLoadingListener() {
     @Override
+    public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
+      imageView.setImageDrawable(failDrawable);
+    }
+
+    @Override
     public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
       imageView.setImageBitmap(getBlurBitmap(loadedImage));
     }
@@ -107,25 +147,60 @@ public class BlurImageView extends RelativeLayout {
 
   private SimpleImageLoadingListener fullLoadingListener = new SimpleImageLoadingListener() {
     @Override
+    public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
+      imageView.setImageDrawable(failDrawable);
+      Log.e("Image Load error", "cannot load Small image, please check url or network status");
+    }
+
+    @Override
     public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
       imageView.setImageBitmap(getBlurBitmap(loadedImage));
       imageLoader.displayImage(mOriginImageUrl, imageView, displayImageOptions,
-          null, new ImageLoadingProgressListener() {
-        @Override
-        public void onProgressUpdate(String imageUri, View view, int current, int total) {
-          if (!enableProgress) {
-            return;
-          }
-          if (current < total) {
-            loadingCircleProgressView.setVisibility(VISIBLE);
-            loadingCircleProgressView.setCurrentProgressRatio((float) current / total);
-          } else {
-            loadingCircleProgressView.setVisibility(GONE);
-          }
-        }
-      });
+          new ImageLoadingListener() {
+            @Override
+            public void onLoadingStarted(String imageUri, View view) {
+              setLoadingProgressRatio(5, 100);
+            }
+
+            @Override
+            public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
+              setLoadingProgressRatio(5, 100);
+              Log.e("Image Load error", "cannot load Big image, please check url or network status");
+            }
+
+            @Override
+            public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+              setLoadingProgressRatio(100, 100);
+            }
+
+            @Override
+            public void onLoadingCancelled(String imageUri, View view) {
+              Log.w("Image Load cancel", "the image loading process is cancelled");
+              setLoadingProgressRatio(100, 100);
+            }
+          },
+          new ImageLoadingProgressListener() {
+            @Override
+            public void onProgressUpdate(String imageUri, View view, int current, int total) {
+              if (!enableProgress) {
+                return;
+              }
+              setLoadingProgressRatio(current, total);
+            }
+          });
     }
   };
+
+  private void setLoadingProgressRatio(int current, int total) {
+    if (current < total) {
+      if (loadingCircleProgressView.getVisibility() == GONE) {
+        loadingCircleProgressView.setVisibility(VISIBLE);
+      }
+      loadingCircleProgressView.setCurrentProgressRatio((float) current / total);
+    } else {
+      loadingCircleProgressView.setVisibility(GONE);
+    }
+  }
 
   /**
    * This method will fetch bitmap from resource and make it blurry, display
@@ -168,7 +243,7 @@ public class BlurImageView extends RelativeLayout {
     mBlurImageUrl = blurImageUrl;
     mOriginImageUrl = originImageUrl;
     cancelImageRequestForSafty();
-    imageLoader.loadImage(blurImageUrl, fullLoadingListener);
+    imageLoader.loadImage(blurImageUrl, displayImageOptions, fullLoadingListener);
   }
 
   private Bitmap getBlurBitmap(Bitmap loadedBitmap) {
@@ -211,6 +286,14 @@ public class BlurImageView extends RelativeLayout {
 
   public void setProgressBarColor(int color) {
     this.loadingCircleProgressView.setProgressColor(color);
+  }
+
+  public void setFailDrawable(Drawable failDrawable) {
+    this.failDrawable = failDrawable;
+  }
+
+  public void setDefaultDrawable(Drawable defaultDrawable) {
+    this.defaultDrawable = defaultDrawable;
   }
 
 }

@@ -1,6 +1,5 @@
 package com.wingjay.blurimageview;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -12,10 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.wingjay.blurimageviewlib.BlurImageView;
 
 import butterknife.Bind;
@@ -53,17 +48,17 @@ public class MainActivity extends AppCompatActivity {
   };
 
   String[] mediumSmUrl = {
-    "https://cdn-images-1.medium.com/freeze/max/60/1*J0q0NNg1j9q3yV_ZVt-saw.jpeg?q=20",
-    "https://cdn-images-1.medium.com/freeze/max/60/1*HZcGmW8TuTeMJ8rEibGoyQ.jpeg?q=20",
-    "https://cdn-images-1.medium.com/freeze/max/60/1*WYkY4km0sPBCRAw5B_3J2g.jpeg?q=20",
-    "https://cdn-images-1.medium.com/freeze/max/30/1*Ez9M6IDiA_Frjz8TBiyzlA.jpeg?q=20"
+    "http://upload-images.jianshu.io/upload_images/1825662-4c4e9bc7148749b7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/62",
+    "http://upload-images.jianshu.io/upload_images/1977600-c562e582d45a4dee.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/62",
+    "http://upload-images.jianshu.io/upload_images/1761761-704c9d7ed34d112b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/62",
+    "http://upload-images.jianshu.io/upload_images/2557965-b224163bc8a4a695.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/62"
   };
 
   String[] mediumNmUrl = {
-    "https://cdn-images-1.medium.com/max/2000/1*J0q0NNg1j9q3yV_ZVt-saw.jpeg",
-    "https://cdn-images-1.medium.com/max/2000/1*HZcGmW8TuTeMJ8rEibGoyQ.jpeg",
-    "https://cdn-images-1.medium.com/max/2000/1*WYkY4km0sPBCRAw5B_3J2g.jpeg",
-    "https://cdn-images-1.medium.com/max/2000/1*Ez9M6IDiA_Frjz8TBiyzlA.jpeg"
+    "http://upload-images.jianshu.io/upload_images/1825662-4c4e9bc7148749b7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/620",
+    "http://upload-images.jianshu.io/upload_images/1977600-c562e582d45a4dee.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/620",
+    "http://upload-images.jianshu.io/upload_images/1761761-704c9d7ed34d112b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/620",
+    "http://upload-images.jianshu.io/upload_images/2557965-b224163bc8a4a695.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/620"
   };
 
   int[] blurImageViewProgressBgColor = {
