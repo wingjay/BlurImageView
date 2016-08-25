@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 // Remember update version when library updates
-version = "1.1.0"
+version = "2.0.0"
 
 android {
     resourcePrefix "wingjay_"
@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 23
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
     }
@@ -53,7 +53,7 @@ install {
                     developer {
                         id 'wingjay'       //填写开发者基本信息
                         name 'wingjay'
-                        email 'wingjaysjtu@gmail.com'
+                        email 'yinjiesh@126.com'
                     }
                 }
                 scm {

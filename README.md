@@ -41,6 +41,13 @@ dependencies {
   blurImageView.setBlurFactor(blurFactor);
 ```
   This can set the factor of blurry, default 8 - 10.
+```java
+  blurImageView.setFailDrawable(Drawable failDrawable);
+  blurImageView.setDefaultDrawable(Drawable defaultDrawable);
+```
+  Configure your own drawable for loading failure & default. Use null to remove them.
+
+
 
 ###Related resource
 Thanks for the algorithms: `Stack Blur`: http://www.quasimondo.com/StackBlurForCanvas/StackBlurDemo.html
