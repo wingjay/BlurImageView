@@ -52,13 +52,17 @@ dependencies {
 Thanks for the algorithms: `Stack Blur`: http://www.quasimondo.com/StackBlurForCanvas/StackBlurDemo.html
 
 ###Reach me - wingjay
-![](http://tp3.sinaimg.cn/1625892654/180/5739331233/1)
 
 Weibo: http://weibo.com/u/1625892654
 
-You can get information about me and reach me in my github page: https://github.com/wingjay
+Blog: http:wingjay.com
+
+GitHub: https://github.com/wingjay
 
 Feel free to give me advices by <mailto:yinjiesh@126.com>
+
+
+![](http://tp3.sinaimg.cn/1625892654/180/5739331233/1)
 
 ######Thanks!
 
