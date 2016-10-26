@@ -55,7 +55,7 @@ Thanks for the algorithms: `Stack Blur`: http://www.quasimondo.com/StackBlurForC
 
 Weibo: http://weibo.com/u/1625892654
 
-Blog: http:wingjay.com
+Blog: http://www.jianshu.com/users/da333fd63fe5/latest_articles
 
 GitHub: https://github.com/wingjay
 
