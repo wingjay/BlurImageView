@@ -59,7 +59,7 @@ Blog: http://www.jianshu.com/users/da333fd63fe5/latest_articles
 
 GitHub: https://github.com/wingjay
 
-Feel free to give me advices by <mailto:yinjiesh@126.com>
+Feel free to give me advices by <mailto:yinjiesh AT 126 DOT com>
 
 
 ![](https://avatars2.githubusercontent.com/u/9619875?v=4&s=460)
