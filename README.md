@@ -62,7 +62,7 @@ GitHub: https://github.com/wingjay
 Feel free to give me advices by <mailto:yinjiesh@126.com>
 
 
-![](http://tp3.sinaimg.cn/1625892654/180/5739331233/1)
+![](https://avatars2.githubusercontent.com/u/9619875?v=4&s=460)
 
 **Thanks!**
 
