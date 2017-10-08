@@ -11,7 +11,7 @@ BlurImageView For Android, you can load your image progressively like [Medium](h
 
 <img src="https://github.com/wingjay/BlurImageView/blob/master/assets/blurImageView_nm.gif" width="300">
 
-###Playable apk
+### Playable apk
 You can [Download sample apk](https://github.com/wingjay/blurimageview/blob/master/sample.apk) and play on your phone. Try it!
 
 ### Why I do this?
