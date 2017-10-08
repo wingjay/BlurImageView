@@ -4,7 +4,7 @@
 # BlurImageView
 BlurImageView For Android, you can load your image progressively like [Medium](https://medium.com/@wing_jay/thinking-about-the-way-of-loading-picture-by-medium-4adfe792b437).
 
-###How it works?
+### How it works?
 1. First it will show user a blurry image;
 2. At the same time, it starts to load the real image;
 3. once loaded, replace the blurry one automatically.
@@ -14,10 +14,10 @@ BlurImageView For Android, you can load your image progressively like [Medium](h
 ###Playable apk
 You can [Download sample apk](https://github.com/wingjay/blurimageview/blob/master/sample.apk) and play on your phone. Try it!
 
-###Why I do this?
+### Why I do this?
 This lib is inspired by [Medium](https://medium.com/@wing_jay/thinking-about-the-way-of-loading-picture-by-medium-4adfe792b437) and users love this way of loading pics, Because a beautiful Blurry pic is always better than a blank area or an ugly thumbnail.
 
-###How to get it? 
+### How to get it? 
 Simply add the dependency
 ```
 dependencies {
@@ -25,7 +25,7 @@ dependencies {
 }
 ```
 
-###How to use it?
+### How to use it?
 ```java
     BlurImageView blurImageView = (BlurImageView) findViewById(R.id.XXX);
     blurImageView.setBlurImageByUrl(blurImageUrl);
@@ -48,10 +48,10 @@ dependencies {
 
 
 
-###Related resource
+### Related resource
 Thanks for the algorithms: `Stack Blur`: http://www.quasimondo.com/StackBlurForCanvas/StackBlurDemo.html
 
-###Reach me - wingjay
+### Reach me - wingjay
 
 Weibo: http://weibo.com/u/1625892654
 
@@ -64,5 +64,5 @@ Feel free to give me advices by <mailto:yinjiesh@126.com>
 
 ![](http://tp3.sinaimg.cn/1625892654/180/5739331233/1)
 
-######Thanks!
+**Thanks!**
 
